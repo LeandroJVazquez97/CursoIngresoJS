@@ -8,12 +8,15 @@ y lo muestro por 'ID' al presionar el botón 'mostrar'
 */
 function mostrar()
 {
+	// INICIAMOS LA VARIABLE
 	let nombreIngresado;
 
+	// PEDIMOS EL NOMBRE MEDIANTE UN PROMPT
+	//	DONDE GUARDO - QUE GUARDO
 	nombreIngresado = prompt("Ingresar el nombre");
 
-	
+	// MOSTRAMOS EL NOMBRE POR MEDIO DE UN ID
+	document.getElementById("txtIdNombre").value = nombreIngresado
 
-	alert("ok");
 }
 
