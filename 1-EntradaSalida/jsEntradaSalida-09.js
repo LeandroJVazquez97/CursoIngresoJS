@@ -56,5 +56,5 @@ function mostrarAumento()
 	sueldoAumentado = sueldo + aumento;
 
 	// MOSTRAMOS LOS RESULTADOS DE LAS VARIABLES EN UN ID
-	alert("El sueldo es " + sueldo + ", el aumento es de " + aumento + " y el sueldo quedaria en " + sueldoAumentado);
+	alert("El sueldo es " + sueldo + ", el aumento es de " + aumento + " y el sueldo quedaria en " + sueldoAumentado + ". y ademas el porcentaje aumentado es de " + porcentaje + " %.");
 }
