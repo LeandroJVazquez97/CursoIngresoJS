@@ -62,10 +62,13 @@ function Materiales ()
     largo = parseInt(largo);
     ancho = parseInt(ancho);
 
+    // SE REALIZA LA OPERACION PARA CONSEGUIR LOS METROS CUADRADOS
     resultado = largo * ancho;
 
+    // SE MULTIPLICA LAS BOLSAS DE CAL Y CEMENTO NECESARIAS, Y SE GUARDAN EN SUS RESPECTIVAS VARIABLES
     bolsaCemento = resultado * 2;
     bolsaCal = resultado * 3;
 
+    // SE MUESTRA EL RESULTADO POR UN ALERT
     alert("Vamos a nesecitar " + bolsaCemento + " bolsas de cemento y " + bolsaCal + " bolsas de cal.");
 }

@@ -27,7 +27,7 @@ function mostrarAumento()
 	alert("El sueldo es " + sueldo + ", el aumento es de " + aumento + " y el sueldo quedaria en " + sueldoAumentado);
 }
 
-
+/*
 /*
 	VAZQUEZ, LEANDRO JAVIER
 	DIV E
@@ -35,7 +35,7 @@ function mostrarAumento()
 	Debemos lograr tomar el importe por ID ,
 	transformarlo a entero (parseInt), luego
 	mostrar el importe con un aumento del 10 %
-	en el cuadro de texto "RESULTADO".*/
+	en el cuadro de texto "RESULTADO"./
 function mostrarAumento()
 {
 	// DECLARAMOS LAS VARIABLES PARA DISCRIMINAR EL SUELDO, EL AUMENTO Y EL RESULTADO FINAL
@@ -58,3 +58,4 @@ function mostrarAumento()
 	// MOSTRAMOS LOS RESULTADOS DE LAS VARIABLES EN UN ID
 	alert("El sueldo es " + sueldo + ", el aumento es de " + aumento + " y el sueldo quedaria en " + sueldoAumentado + ". y ademas el porcentaje aumentado es de " + porcentaje + " %.");
 }
+*/
