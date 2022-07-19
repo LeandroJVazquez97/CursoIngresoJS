@@ -1,37 +1,72 @@
 /*
-una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
-
-en Invierno: bariloche tiene un aumento del 20% cataratas y Cordoba tiene un descuento del 10% Mar del plata tiene un descuento del 20%
-
-en Verano: bariloche tiene un descuento del 20% cataratas y Cordoba tiene un aumento del 10% Mar del plata tiene un aumento del 20%
-
-en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aumento del 10% Mar del plata tiene un aumento del 10% y Cordoba tiene el precio sin descuento
+	VAZQUEZ, LEANDRO JAVIER
+	DIV E
+	EJERCICIO 09 SWITCH
 */
+
 function mostrar()
 {
+	// SE CREA VARIABLES
 	let precioBase, precioFinal, estacion, destino;
 
+	// A LA VARIABLE PRECIOBASE SE LE ASIGNA LA BASE DE LA ESTADIA
 	precioBase = 15000;
 
+	// SE PIDE LOS DATOS ESTACION Y DESTINO POR ID
 	estacion = document.getElementById("txtIdEstacion").value;
 	destino = document.getElementById("txtIdDestino").value;
 
+	// SE CREA UN SWICTH QUE SU CONDICION ES LA ESTACION DEL AÑO
+	// ENGLOBA LOS DEMAS SWITCH DE DESTINOS
+	// SE REALIZA SU RESPECTIVA OPERACION Y SE DEVUELVE EL PRECIO FINAL EN SU RESPECTIVA VARIABLE
 	switch(estacion)
 	{
 		case "Invierno":
-			if(destino == "Bariloche")
+			switch(destino)
 			{
-				precioFinal = precioBase * (20/100) + precioBase;
-			}
-			else if(destino == "Cordoba" || destino == "Cataratas")
+				case "Bariloche":
+					precioFinal = precioBase + precioBase * (20/100);
+					break;
+				case "Cordoba":
+				case "Cataratas":
+					precioFinal = precioBase - precioBase * (10/100);
+					break;
+				case "Mar del plata":
+					precioFinal = precioBase - precioBase * (20/100);
+					break;
+			}	
+		break;
+		case "Verano":
+			switch(destino)
 			{
-				precioFinal = precioBase * (10/100) - precioBase;
-			}
-			else if(destino == "Mar del plata")
-			{
-				precioFinal = precioBase * (20/100) - precioBase;
+				case "Bariloche":
+					precioFinal = precioBase - precioBase * (20/100);
+					break;
+				case "Cordoba":
+				case "Cataratas":
+					precioFinal = precioBase + precioBase * (10/100);
+					break;
+				case "Mar del plata":
+					precioFinal = precioBase + precioBase * (20/100);
+					break;	
 			}
 		break;
+		case "Otoño":
+		case "Primavera":
+			switch(destino)
+			{
+				case "Bariloche":
+				case "Cataratas":
+				case "Mar del plata":
+					precioFinal = precioBase + precioBase * (10/100);
+					break;
+				default:
+					precioFinal = precioBase;
+					break;
+			}	
 	}
+
+	// MEDIANTE UN ALERT MOSTRAMOS EL PRECIO FINAL DE LA ESTADIA
+	alert("El precio final es de $" + precioFinal);
 
 }//FIN DE LA FUNCIÓN
