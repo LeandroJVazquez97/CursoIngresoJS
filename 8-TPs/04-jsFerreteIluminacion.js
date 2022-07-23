@@ -7,13 +7,13 @@ D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es de
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
- */
+
 
 /*
     VAZQUEZ, LEANDRO JAVIER
     DIV E
     TP 04, PARTE E
-*/
+
 
 function CalcularPrecio () 
 {
@@ -144,3 +144,93 @@ function CalcularPrecio ()
     // SE ASIGNA EL PRECIO FINAL AL ID DESPUES DE PASAR POR EL PROCESO DE DESCUENTO Y DE IMPUESTOS
     document.getElementById("txtIdprecioDescuento").value = precioFinal;
 }
+
+/*
+    VAZQUEZ, LEANDRO JAVIER
+    DIV E
+    EJERCICIO TP 04 SWITCH
+*/
+
+function CalcularPrecio () 
+{
+    let cantidadLamparitas, precioBase , precioFinal, porcentaje, marca;
+
+    // LA VARIABLE PRECIO SE LE ASIGNA EL VALOR DE LAS LAMPARITAS
+    precioBase = 35;
+
+    // SE PIDE LA CANTIDAD DE LAMPARITAS A COMPRAR
+    cantidadLamparitas = document.getElementById("txtIdCantidad").value;
+
+    // SE PARSEA LA CANTIDAD
+    cantidadLamparitas = parseInt(cantidadLamparitas);
+
+    // SE PIDE LA MARCA POR ID
+    marca = document.getElementById("Marca").value;
+
+    // SE REALIZA UN SWITCH CON UN DEFAULT PARA COLOCAR UN IF EN CASO QUE SEAN 6 O MAS CANTIDAD DE LAMPARITAS
+    switch(cantidadLamparitas)
+    {
+        case 5:
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = -40;
+                    break;
+                default:
+                    porcentaje = -30;
+                    break;
+            }
+            break;
+        case 4:
+            switch(marca)
+            {
+                case "ArgentinaLuz": 
+                case "FelipeLamparas":
+                    porcentaje = -25;
+                    break;
+                default:
+                    porcentaje = -20;
+                    break;
+            }
+            break;
+        case 3: 
+        switch(marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = -15; 
+                case "FelipeLamparas":
+                    porcentaje = -10;
+                    break;
+                default:
+                    porcentaje = -5;
+                    break;
+            }
+            break;
+        default:
+            if(6 <= cantidadLamparitas)
+            {
+                porcentaje = -50;
+            }
+            break;
+    }
+
+    // SE CALCULA EL PRECIOBASE MAS EL PORCENTAJE DE DESCUENTO POR LA CANTIDAD DE LAMPARITAS Y SE ASIGNA AL PRECIO FINAL
+    precioFinal = (precioBase + precioBase * (porcentaje / 100)) * cantidadLamparitas;
+
+    // SE ULTIZA UN EL SI PRECIO FINAL SUPERA LOS 120 PESOS Y SE LE AUMENTA EL DESCUENTO
+    if(120 < precioFinal)
+    {
+        let impuesto;
+
+        impuesto = precioFinal * (10/100);
+        
+        precioFinal = precioFinal + impuesto;
+
+        alert("”Usted pago " + precioFinal + " con el impuesto de IIBB., siendo " + impuesto + " el impuesto que se pagó");
+    }
+
+    /// SE MUESTRA POR ID EL PRECIO FINAL
+    document.getElementById("txtIdprecioDescuento").value = precioFinal;
+}
+
+

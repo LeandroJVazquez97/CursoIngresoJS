@@ -7,7 +7,7 @@
 function mostrar()
 {
 	// SE CREA VARIABLES
-	let precioBase, precioFinal, estacion, destino;
+	let precioBase, precioFinal, estacion, destino, porcentaje;
 
 	// A LA VARIABLE PRECIOBASE SE LE ASIGNA LA BASE DE LA ESTADIA
 	precioBase = 15000;
@@ -25,14 +25,13 @@ function mostrar()
 			switch(destino)
 			{
 				case "Bariloche":
-					precioFinal = precioBase + precioBase * (20/100);
-					break;
-				case "Cordoba":
-				case "Cataratas":
-					precioFinal = precioBase - precioBase * (10/100);
+					porcentaje = 20;
 					break;
 				case "Mar del plata":
-					precioFinal = precioBase - precioBase * (20/100);
+					porcentaje = -20;
+					break;
+				default:
+					porcentaje = -10;
 					break;
 			}	
 		break;
@@ -40,32 +39,30 @@ function mostrar()
 			switch(destino)
 			{
 				case "Bariloche":
-					precioFinal = precioBase - precioBase * (20/100);
-					break;
-				case "Cordoba":
-				case "Cataratas":
-					precioFinal = precioBase + precioBase * (10/100);
+					porcentaje = -20;
 					break;
 				case "Mar del plata":
-					precioFinal = precioBase + precioBase * (20/100);
+					porcentaje = 20;
+					break;	
+				default:
+					porcentaje = 10;
 					break;	
 			}
 		break;
-		case "Otoño":
-		case "Primavera":
+		default:
 			switch(destino)
 			{
-				case "Bariloche":
-				case "Cataratas":
-				case "Mar del plata":
-					precioFinal = precioBase + precioBase * (10/100);
+				case "Cordoba":
+					porcentaje = 0;
 					break;
 				default:
-					precioFinal = precioBase;
+					porcentaje = 10;
 					break;
 			}	
+			break;
 	}
 
+	precioFinal = precioBase + precioBase * (porcentaje / 100);
 	// MEDIANTE UN ALERT MOSTRAMOS EL PRECIO FINAL DE LA ESTADIA
 	alert("El precio final es de $" + precioFinal);
 
