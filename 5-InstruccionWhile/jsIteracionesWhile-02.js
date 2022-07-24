@@ -1,10 +1,24 @@
 /*
-al presionar el botón mostrar 10 repeticiones 
-con números DESCENDENTES, desde el 10 al 1.*/
+	VAZQUEZ, LEANDRO JAVIER
+	DIV E
+	EJERCICIO 02 WHILE
+*/
 function mostrar()
 {
-	var contador;
-	contador=0; 
-	alert('iteración while');
+	// DECLARAMOS LA VARIABLE NUMERO
+	let numero;
 
+	// INICIALIZAMOS LA VARIABLE CON UN NUMERO PARA COMENZAR
+	numero = 10;
+
+	// AL WHILE LE PONEMOS LA CONDICION QUE SE REPITA HASTA QUE NUMERO LLEGUE A 1
+	while(numero >= 1)
+	{
+		// MOSTRAMOS EL NUMERO POR CONSOLA
+		console.log(numero);
+
+		// A LA VARIABLE NUMERO DE LE RESTA 1
+		numero = numero - 1;
+	}
+	
 }//FIN DE LA FUNCIÓN
