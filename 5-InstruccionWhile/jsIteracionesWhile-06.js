@@ -20,7 +20,7 @@ function mostrar()
 		// LE PEDIMOS QUE INGRESE UN NUMERO
 		numeroIngresado = prompt("Ingrese un numero:");
 
-		// PARSEAMOS EL NUMERO INGRESADOO
+		// PARSEAMOS EL NUMERO INGRESADO
 		numeroIngresado = parseInt(numeroIngresado);
 
 		// EL NUMERO INGRESADO SE LO SUMAMOS A LA VARIABLE ACUMULADOR
